@@ -4,7 +4,7 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 import os
 from time import sleep
-import cv2
+
 dia = 0
 sender = "robertsaulamota@gmail.com"
 password = "cyfcyiixcsdbtiez"
@@ -16,7 +16,7 @@ def send_email(body, sender, recipients, password):
     image_path = f"image{dia}.jpg"
 
     # Use the fswebcam command-line tool to capture an image    
-    subprocess.run(['fswebcam', '--no-banner', image_path])
+    os.system(f'fswebcam --no-banner {image_path}')
 
     with open(image_path, 'rb') as f:
         image = f.read()
