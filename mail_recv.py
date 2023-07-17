@@ -67,7 +67,5 @@ def main():
                     start()
                 else:
                     print("Pin is already off!")
-    
-while True:
-    main()
     sleep(1)
+    

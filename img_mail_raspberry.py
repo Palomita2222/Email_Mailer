@@ -6,12 +6,13 @@ import os
 from time import sleep
 
 dia = 0
-sender = "robertsaulamota@gmail.com"
-password = "cyfcyiixcsdbtiez"
-recipients = ["robertsaulamota@gmail.com"]
-body = f"La planta en el dia d'avui:"  # Update the body as a string
 
-def send_email(body, sender, recipients, password):
+
+def send_email():
+    sender = "robertsaulamota@gmail.com"
+    password = "cyfcyiixcsdbtiez"
+    recipients = ["robertsaulamota@gmail.com"]
+    body = f"La planta en el dia d'avui:"  # Update the body as a string
     subject = f"Dia {dia}"
     image_path = f"image{dia}.jpg"
 
@@ -36,8 +37,6 @@ def send_email(body, sender, recipients, password):
         smtp_server.login(sender, password)
         smtp_server.sendmail(sender, recipients, msg.as_string())
     print("Message sent!")
+    sleep(24*60*60)
 
-while True:
-    send_email(body, sender, recipients, password)
-    dia += 1
-    sleep(60*60*24)
+
